@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FEBF0A92BFC46260077432D /* libglog.0.6.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEBF0A82BFC46260077432D /* libglog.0.6.0.dylib */; };
+		8FEBF0AD2BFC46450077432D /* libgflags.2.2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FEBF0AC2BFC46450077432D /* libgflags.2.2.2.dylib */; };
 		D94907072BF645B400AEDE2D /* sbus.c in Sources */ = {isa = PBXBuildFile; fileRef = D94907062BF645B400AEDE2D /* sbus.c */; };
 		D9EE28762BF64213009F3007 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9EE28752BF64213009F3007 /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8FEBF0A82BFC46260077432D /* libglog.0.6.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglog.0.6.0.dylib; path = /opt/homebrew/Cellar/glog/0.6.0/lib/libglog.0.6.0.dylib; sourceTree = "<group>"; };
+		8FEBF0AC2BFC46450077432D /* libgflags.2.2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgflags.2.2.2.dylib; path = /opt/homebrew/Cellar/gflags/2.2.2/lib/libgflags.2.2.2.dylib; sourceTree = "<group>"; };
 		D94907052BF645B400AEDE2D /* sbus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sbus.h; sourceTree = "<group>"; };
 		D94907062BF645B400AEDE2D /* sbus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sbus.c; sourceTree = "<group>"; };
 		D9EE28722BF64213009F3007 /* sbus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sbus; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,12 +39,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEBF0AD2BFC46450077432D /* libgflags.2.2.2.dylib in Frameworks */,
+				8FEBF0A92BFC46260077432D /* libglog.0.6.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FEBF0A72BFC46250077432D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FEBF0AC2BFC46450077432D /* libgflags.2.2.2.dylib */,
+				8FEBF0A82BFC46260077432D /* libglog.0.6.0.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9BFEF172BF6458D00F683E7 /* sbus */ = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +70,7 @@
 			children = (
 				D9EE28742BF64213009F3007 /* sbus */,
 				D9EE28732BF64213009F3007 /* Products */,
+				8FEBF0A72BFC46250077432D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +275,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/boost/1.85.0/include,
+					/opt/homebrew/Cellar/gflags/2.2.2/include,
+					/opt/homebrew/Cellar/glog/0.6.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/gflags/2.2.2/lib,
+					/opt/homebrew/Cellar/glog/0.6.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -267,6 +293,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/boost/1.85.0/include,
+					/opt/homebrew/Cellar/gflags/2.2.2/include,
+					/opt/homebrew/Cellar/glog/0.6.0/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/gflags/2.2.2/lib,
+					/opt/homebrew/Cellar/glog/0.6.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
